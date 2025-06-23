@@ -1,12 +1,15 @@
-import Link from 'next/link';
-
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="text-center py-lg mt-xl">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="microgfx mb-md">VIZIO PLATFORM WIREFRAME • V1.0</div>
-        <p className="type-body-mono text-muted">Designed for a seamless digital voucher experience</p>
+    <footer className="text-center py-8 mt-8">
+      <div className="font-mono text-xs font-normal text-text-muted uppercase tracking-widest relative mb-4">
+        <span className="relative">
+          <span className="absolute right-full mr-1 text-accent-purple">◊</span>
+          VIZIO PLATFORM WIREFRAME • V1.0
+        </span>
       </div>
+      <p className="font-mono text-sm text-text-muted">
+        Designed for a seamless digital voucher experience
+      </p>
     </footer>
   );
 }

@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import Header from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
+import Footer from '@/components/layout/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,25 +23,21 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-primary-bg`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen" style={{ backgroundColor: 'var(--primary-bg)' }}>
-            <Header />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
-          <Toaster />
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
